@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.example.eventos.ActividadPrincipal">
+    <item
+        android:id="@+id/action_putData"
+        android:orderInCategory="100"
+        android:title="Subir Imagen"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_streamData"
+        android:orderInCategory="101"
+        android:title="Subir Stream"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_putFile"
+        android:orderInCategory="102"
+        android:title="Subir Fichero"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_getFile"
+        android:orderInCategory="102"
+        android:title="Descargar Fichero"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_fotografiasDrive"
+        android:orderInCategory="103"
+        android:title="Fotografias Drive"
+        app:showAsAction="never" />
+</menu>

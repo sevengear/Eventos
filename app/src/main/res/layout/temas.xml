@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No recibir notificaciones:" />
+
+    <CheckBox
+        android:id="@+id/checkBoxNoRecibirNotificaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No deseo recibir notificaciones" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecciona tus suscripciones" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDeportes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deportes" />
+
+    <CheckBox
+        android:id="@+id/checkBoxTeatro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Teatro" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cine" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFiestas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fiestas" />
+</LinearLayout>
