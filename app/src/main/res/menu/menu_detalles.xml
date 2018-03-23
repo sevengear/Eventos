@@ -28,4 +28,9 @@
         android:orderInCategory="103"
         android:title="Fotografias Drive"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_acercaDe"
+        android:orderInCategory="104"
+        android:title="Acerca de"
+        app:showAsAction="never" />
 </menu>

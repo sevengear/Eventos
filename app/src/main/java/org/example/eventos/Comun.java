@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -24,6 +25,7 @@ public class Comun {
     static String ID_PROYECTO = "eventos-82bb0";
     static FirebaseStorage storage;
     static StorageReference storageRef;
+    static FirebaseAnalytics mFirebaseAnalytics;
 
     String idRegistro = "";
 

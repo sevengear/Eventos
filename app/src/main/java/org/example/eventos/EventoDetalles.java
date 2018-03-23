@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -46,6 +47,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.example.eventos.Comun.getStorageReference;
+import static org.example.eventos.Comun.mFirebaseAnalytics;
 import static org.example.eventos.Comun.mostrarDialogo;
 
 /**
@@ -131,24 +133,42 @@ public class EventoDetalles extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         View vista = (View) findViewById(android.R.id.content);
+        Bundle bundle = new Bundle();
         int id = item.getItemId();
         switch (id) {
             case R.id.action_putData:
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "subir_imagen");
+                mFirebaseAnalytics.logEvent("menus", bundle);
                 subirAFirebaseStorage(SOLICITUD_SUBIR_PUTDATA, null);
                 break;
             case R.id.action_streamData:
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "subir_stream");
+                mFirebaseAnalytics.logEvent("menus", bundle);
                 seleccionarFotografiaDispositivo(vista, SOLICITUD_SELECCION_STREAM);
                 break;
             case R.id.action_putFile:
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "subir_fichero");
+                mFirebaseAnalytics.logEvent("menus", bundle);
                 seleccionarFotografiaDispositivo(vista, SOLICITUD_SELECCION_PUTFILE);
                 break;
             case R.id.action_getFile:
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "descargar_fichero");
+                mFirebaseAnalytics.logEvent("menus", bundle);
                 descargarDeFirebaseStorage(evento);
                 break;
             case R.id.action_fotografiasDrive:
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "fotografias_drive");
+                mFirebaseAnalytics.logEvent("menus", bundle);
                 Intent intent = new Intent(getBaseContext(), FotografiasDrive.class);
                 intent.putExtra("evento", evento);
                 startActivity(intent);
+                break;
+            case R.id.action_acercaDe:
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "acerca_de");
+                mFirebaseAnalytics.logEvent("menus", bundle);
+                Intent intentWeb = new Intent(getBaseContext(), EventosWeb.class);
+                intentWeb.putExtra("evento", evento);
+                startActivity(intentWeb);
                 break;
         }
         return super.onOptionsItemSelected(item);

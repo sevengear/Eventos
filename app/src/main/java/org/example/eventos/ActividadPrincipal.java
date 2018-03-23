@@ -18,14 +18,14 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 
 import static org.example.eventos.Comun.mostrarDialogo;
-import static org.example.eventos.Comun.storage;
-import static org.example.eventos.Comun.storageRef;
+import static org.example.eventos.Comun.*;
 import static org.example.eventos.EventosFirestore.EVENTOS;
 
 public class ActividadPrincipal extends AppCompatActivity {
@@ -90,6 +90,8 @@ public class ActividadPrincipal extends AppCompatActivity {
                 android.Manifest.permission.GET_ACCOUNTS,
                 android.Manifest.permission.CAMERA};
         ActivityCompat.requestPermissions(this, PERMISOS, 1);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
     }
 
     @Override
@@ -102,6 +104,9 @@ public class ActividadPrincipal extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_temas) {
+            Bundle bundle = new Bundle();
+            bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "suscripciones");
+            mFirebaseAnalytics.logEvent("menus", bundle);
             Intent intent = new Intent(getBaseContext(), Temas.class);
             startActivity(intent);
             return true;

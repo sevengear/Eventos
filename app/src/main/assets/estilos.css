@@ -1,0 +1,38 @@
+h1 {
+color: #111;
+font-family: 'Helvetica Neue', sans-serif;
+font-size: 50px;
+font-weight: bold;
+letter-spacing: -1px;
+line-height: 1;
+text-align: center;
+}
+p {
+color: #685206;
+font-family: 'Helvetica Neue', sans-serif;
+font-size: 14px;
+line-height: 24px;
+margin: 0 0 24px;
+text-align: justify;
+text-justify: inter-word;
+}
+a {
+font-family: 'Droid serif', serif;
+background: #b48608;
+padding: 4px 7px;
+color: #000;
+text-decoration: none;
+margin: 14px 14px 14px 14px;
+width: 90%;
+display: block;
+text-align: center;
+font-style: italic;
+font-size: 32px;
+}
+a:hover {
+color: #000;
+background: #fff;
+}
+#imagen {
+text-align: center;
+}

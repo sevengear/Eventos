@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+$(document).bind('mobileinit',function(){
+$.mobile.changePage.defaults.changeHash = false;
+$.mobile.hashListeningEnabled = false;
+$.mobile.pushStateEnabled = false;
+});
+
+    </script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+    <link href="estilos.css" rel="stylesheet" type="text/css">
+    <script src="funciones.js"></script>
+</head>
+<body>
+<div data-role="page" data-theme="b" id="pagina1">
+    <div data-role="header">
+        <a href="#" data-icon="home" onClick="volver();">Inicio</a>
+        <h1 id="evento"></h1>
+        <a href="#pagina2" data-role="button" data-icon="info"
+           data-transition="popup">+ Info</a>
+    </div>
+    <div data-role="content">
+        <p id="wiki">
+        <p>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h1>DEU UPV</h1>
+    </div>
+</div>
+<div data-role="panel" data-theme="b" id="pagina2">
+    <h3>Info</h3>
+    <p>Curso DEU UPV</p>
+    <p>Master UPV</p>
+    <p>Curso Firebase UPV</p>
+    <a href="#pagina2" data-role="button" data-icon="back"
+       data-transition="overlay">Volver</a>
+</div>
+</body>
+</html>
