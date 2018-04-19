@@ -1,10 +1,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-tools:context=".ActividadPrincipal">
-<item
-    android:id="@+id/action_temas"
-    android:orderInCategory="100"
-    android:title="Suscripciones"
-    app:showAsAction="never" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActividadPrincipal">
+    <item
+        android:id="@+id/action_temas"
+        android:orderInCategory="100"
+        android:title="Suscripciones"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_invitar"
+        android:orderInCategory="50"
+        android:title="Invitar"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_error"
+        android:orderInCategory="101"
+        android:title="Error"
+        app:showAsAction="never" />
 </menu>

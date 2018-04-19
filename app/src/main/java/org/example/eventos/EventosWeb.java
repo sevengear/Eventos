@@ -33,6 +33,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static org.example.eventos.Comun.colorFondo;
+
 public class EventosWeb extends AppCompatActivity {
 
     WebView navegador;
@@ -72,6 +74,7 @@ public class EventosWeb extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 dialogo.dismiss();
+                navegador.loadUrl("javascript:colorFondo(\""+colorFondo+"\")");
                 navegador.loadUrl("javascript:muestraEvento(\""+evento+"\");");
             }
 

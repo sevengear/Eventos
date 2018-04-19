@@ -46,6 +46,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.example.eventos.Comun.acercaDe;
 import static org.example.eventos.Comun.getStorageReference;
 import static org.example.eventos.Comun.mFirebaseAnalytics;
 import static org.example.eventos.Comun.mostrarDialogo;
@@ -76,13 +77,16 @@ public class EventoDetalles extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.evento_detalles);
-        txtEvento = (TextView) findViewById(R.id.txtEvento);
-        txtFecha = (TextView) findViewById(R.id.txtFecha);
-        txtCiudad = (TextView) findViewById(R.id.txtCiudad);
-        imgImagen = (ImageView) findViewById(R.id.imgImagen);
+        txtEvento = findViewById(R.id.txtEvento);
+        txtFecha = findViewById(R.id.txtFecha);
+        txtCiudad =  findViewById(R.id.txtCiudad);
+        imgImagen = findViewById(R.id.imgImagen);
         Bundle extras = getIntent().getExtras();
         evento = extras.getString("evento");
-        if (evento == null) evento = "";
+        if (evento == null) {
+            android.net.Uri url = getIntent().getData();
+            evento= url.getQueryParameter("evento");
+        }
         registros = FirebaseFirestore.getInstance().collection("eventos");
         registros.document(evento).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -91,12 +95,12 @@ public class EventoDetalles extends AppCompatActivity {
                     txtEvento.setText(task.getResult().get("evento").toString());
                     txtCiudad.setText(task.getResult().get("ciudad").toString());
                     txtFecha.setText(task.getResult().get("fecha").toString());
-                    new DownloadImageTask((ImageView) imgImagen).execute(task.getResult().get("imagen").toString());
+                    new DownloadImageTask(imgImagen).execute(task.getResult().get("imagen").toString());
                 }
             }
         });
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 
@@ -127,6 +131,9 @@ public class EventoDetalles extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_detalles, menu);
+        if (!acercaDe) {
+            menu.removeItem(R.id.action_acercaDe);
+        }
         return true;
     }
 
