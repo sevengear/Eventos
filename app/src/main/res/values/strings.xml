@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Eventos</string>
     <string name="action_settings">Settings</string>
+
+    <string name="invitation_title">Envio de una invitación de la app Eventos</string>
+    <string name="invitation_message">No te pierdas nunca más un evento interesante.</string>
+    <string name="invitation_deep_link">https://principal.eventos-82bb0.firebaseapp.com?descuento=15</string>
+    <string name="invitation_custom_image">https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png</string>
+    <string name="invitation_cta">Instalar!!</string>
+    <string name="com.crashlytics.useFirebaseAppId">true</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">tDm4l7UELS2BsPYXZD1BByCHg</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">84Jnz3kCeycXEO4VyvSeJQumZuh7r4d1bYgvTnOsw6yKDS01vv</string>
+    <string name="facebook_app_id">364969567353775</string>
 </resources>

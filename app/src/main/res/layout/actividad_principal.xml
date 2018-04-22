@@ -7,6 +7,7 @@
     tools:context="org.example.eventos.ActividadPrincipal">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -19,6 +20,27 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="175dp"
+        android:layout_height="121dp"
+        android:layout_gravity="top|start"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        tools:com_facebook_confirm_logout="false"
+        tools:com_facebook_tooltip_mode="never_display" />
+
+    <com.twitter.sdk.android.core.identity.TwitterLoginButton
+        android:id="@+id/twitter_login_button"
+        android:layout_width="175dp"
+        android:layout_height="26dp"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:textSize="12sp" />
 
     <include layout="@layout/content_actividad_principal" />
 

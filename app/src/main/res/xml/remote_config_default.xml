@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>color_fondo</key>
+        <value>WHITE</value>
+    </entry>
+    <entry>
+        <key>acerca_de</key>
+        <value>true</value>
+    </entry>
+</defaultsMap>

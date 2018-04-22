@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -18,7 +19,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5">
+        android:layout_weight="0.4">
 
         <ImageView
             android:id="@+id/imgImagen"
@@ -30,7 +31,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5">
+        android:layout_weight="0.1">
 
         <TextView
             android:id="@+id/txtEvento"
@@ -54,4 +55,85 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
             android:textStyle="italic" />
     </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5">
+
+        <EditText
+            android:id="@+id/textoFacebook"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:maxLines="4"
+            android:hint="Texto a publicar en Facebook o Twitter"
+            app:layout_constraintBottom_toTopOf="@id/api_graph"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/api_graph"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:text="API Graph Facebook"
+            app:layout_constraintBottom_toTopOf="@id/publishTextGraph"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textoFacebook" />
+
+        <Button
+            android:id="@+id/publishTextGraph"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Publicar texto"
+            app:layout_constraintBottom_toTopOf="@id/api_twitter"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/publishImageGraph"
+            app:layout_constraintTop_toBottomOf="@id/api_graph" />
+
+        <Button
+            android:id="@+id/publishImageGraph"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Publicar imagen"
+            app:layout_constraintBottom_toTopOf="@id/api_twitter"
+            app:layout_constraintLeft_toRightOf="@id/publishTextGraph"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/api_graph" />
+
+        <TextView
+            android:id="@+id/api_twitter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:text="Status Service Twitter"
+            app:layout_constraintBottom_toTopOf="@id/publishTextTwitter"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/publishImageGraph" />
+
+        <Button
+            android:id="@+id/publishTextTwitter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Publicar tweet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/publishImageTwitter"
+            app:layout_constraintTop_toBottomOf="@id/api_twitter" />
+
+        <Button
+            android:id="@+id/publishImageTwitter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Publicar imagen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/publishTextTwitter"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/api_twitter" />
+
+
+    </android.support.constraint.ConstraintLayout>
 </LinearLayout>
